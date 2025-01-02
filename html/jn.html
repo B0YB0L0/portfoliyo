@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Get the</h2>
+        <form onsubmit="emailSend(); reset(); return false;">
+        <input type="text" id="name" placeholder="name" name="name" required>
+        <input type="text" id="phone" placeholder="phone" name="phone" required>
+        <input type="email" id="email" placeholder="email" name="email" required>
+        <button type="submit">submit</button>
+        </form>
+    </div>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function emailSend(){
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "omongaldiyevboburbek@gmail.com",
+                Password : "8B1131D91CD69C30CD43E950F1D2C6A4A863",
+                To : 'omongaldiyevboburbek@gmail.com',
+                From : "omongaldiyevboburbek@gmail.com",
+                Subject : "This is the subject",
+                Body : "And this is the body"
+            }).then(
+            message => alert(message)
+            );
+        }
+        console.log("salom");
+    </script>
+</body>
+</html>
